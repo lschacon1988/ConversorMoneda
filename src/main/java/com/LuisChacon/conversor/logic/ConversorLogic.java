@@ -13,12 +13,12 @@ public class ConversorLogic {
 	private String responseJson = tazasApi.responseJsonString();
 	public Double dolar = tazasApi.RateBaseEur(responseJson, "USD");
 	public Double cop = tazasApi.RateBaseEur(responseJson, "COP");
-	public Double libra = tazasApi.RateBaseEur(responseJson, "LBP");
+	public Double libra = tazasApi.RateBaseEur(responseJson, "GBP");
 	
 	public Double valorInput = 0.00D;
 
 	public void convertir(JComboBox<Monedas> cmb, JLabel lbl, JTextField txt) {
-		System.out.println(cop);
+		
 		if (new Validate().Valida(txt.getText(), lbl)) {
 
 			valorInput = Double.parseDouble(txt.getText());
@@ -37,7 +37,7 @@ public class ConversorLogic {
 				lbl.setText(format.format(res));
 				break;
 			}
-			case EUR_LBP: {
+			case EUR_GBP: {
 				Double res = eurosMoneda(libra, valorInput);
 				lbl.setText(format.format(res));
 				break;
@@ -52,7 +52,7 @@ public class ConversorLogic {
 				lbl.setText(format.format(res));
 				break;
 			}
-			case LBP_EUR: {
+			case GBP_EUR: {
 				Double res = MonedaEuros(libra, valorInput);
 				lbl.setText(format.format(res));
 				break;

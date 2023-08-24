@@ -15,6 +15,8 @@ public class Main {
 		frame.setLocationRelativeTo(null);
 		
 		
+		
+		
 	}
 
 }
